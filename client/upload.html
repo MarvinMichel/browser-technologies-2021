@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>PhotoAlbum | Upload</title>
+</head>
+<body>
+  <form 
+    action="/"
+    method="POST"
+    enctype="multipart/form-data"
+  >
+    <fieldset>
+      <label>
+        Title:
+        <input type="text" name="name" id="name">
+      </label>
+      <label>
+        Description:
+        <textarea name="desc" id="desc"></textarea>
+      </label>
+    </fieldset>
+    <fieldset id="drop-zone">
+      Drag &amp; drop <br />
+      <span>or</span>
+      <label>
+        <input type="file" name="image" id="image">
+        Select file
+      </label>
+    </fieldset>
+    <button type="submit">Upload</button>
+  </form>
+</body>
+</html>

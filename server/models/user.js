@@ -7,6 +7,6 @@ const userSchema = new Schema({
   username: String,
   password: String,
   images: [imageSchema]
-}, { users })
+})
 
-module.exports = new mongoose.model('User', userSchema)
+module.exports = new mongoose.model('Users', userSchema)

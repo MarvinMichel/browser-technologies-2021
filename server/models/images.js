@@ -2,9 +2,14 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-export const imageSchema = new Schema({
-  data: Buffer,
-  contentType: String
-}, { images })
+const imageSchema = new Schema({
+  name: String,
+  description: String,
+  img: {
+    data: Buffer,
+    contentType: String
+  }
+})
 
-module.exports = new mongoose.model('Image', imageSchema)
+exports.imageSchema = imageSchema
+module.exports = new mongoose.model('Images', imageSchema)
