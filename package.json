@@ -1,7 +1,7 @@
 {
-  "name": "image-album",
+  "name": "albummy",
   "version": "1.0.0",
-  "description": "Progressivly enhanced online collection of images and image albums, which you can upload to the database.",
+  "description": "Progressively enhanced online collection of images and image albums, which you can upload to the database.",
   "main": "server.js",
   "scripts": {
     "start": "node ./server/server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MarvinMichel/browser-technologies-2021.git"
+    "url": "git+https://github.com/MarvinMichel/albummy.git"
   },
   "author": "Marvin Sernee",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MarvinMichel/browser-technologies-2021/issues"
+    "url": "https://github.com/MarvinMichel/albummy/issues"
   },
-  "homepage": "https://github.com/MarvinMichel/browser-technologies-2021#readme",
+  "homepage": "https://github.com/MarvinMichel/albummy#readme",
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
