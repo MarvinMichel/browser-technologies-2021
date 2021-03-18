@@ -13,6 +13,8 @@ const index = require('./routes/index')
 const upload = require('./routes/upload')
 
 app
+  .set('view engine', 'ejs')
+  .set('views', __dirname + '/views')
   .use(urlencoded({ extended: true }))
   .use(static(ROOT))
   .use('/', index)

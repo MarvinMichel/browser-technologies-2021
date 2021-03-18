@@ -1,11 +1,10 @@
 const router = require('express').Router()
-const { join } = require('path')
 
 const upload = require('../middleware/uploadImage')
 const createImage = require('../middleware/createImage')
 
 router.get('/', (req, res) => {
-  res.sendFile(join(__dirname, '../../client', 'upload.html'))
+  res.render('upload')
 })
 
 router.post('/', upload.single('image'), (req, res) => {
