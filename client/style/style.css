@@ -91,10 +91,15 @@ header a {
 .feed {
   align-items: center;
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   margin: 0 auto;
-  max-width: 50em;
   min-height: 80vh;
   justify-content: center;
+  width: clamp(15em, 90%, 50em);
+}
+
+.feed img {
+  width: 100%;
 }
 
 /************* Upload Images Form *****************/

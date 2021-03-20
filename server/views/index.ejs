@@ -8,7 +8,17 @@
       </svg>
     </a>
     <section class="feed">
-      <p>This is the homepage</p>
+      <% if (images.length) { %>
+        <% images.map(image => { %>
+          <img 
+            src="data:image/<%=image.img.contentType%>;base64, <%=image.img.data.toString('base64')%>"
+            alt="<%= image.desc %>"
+          />
+        <% }) %>
+      <% } else { %>
+        <h3>You don't have any images yet.</h3>
+        <a href="/upload">Upload Image</a>
+      <% } %>
     </section>
   </main>
 <%- include('./partials/foot') %>

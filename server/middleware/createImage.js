@@ -1,6 +1,6 @@
 const Images = require('../models/images')
 
-function createImage(name, desc, data, mimetype) {
+function createImage({ name, desc, data, mimetype }) {
   Images.create({
     name: name,
     description: desc,

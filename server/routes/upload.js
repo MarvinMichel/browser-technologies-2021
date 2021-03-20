@@ -8,12 +8,15 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', upload.single('image'), (req, res) => {
-  createImage(
-    req.body.name,
-    req.body.desc,
-    req.file.buffer,
-    req.file.mimetype
-  )
+  const image = {
+    name: req.body.name,
+    desc: req.body.desc,
+    data: req.file.buffer,
+    mimetype: req.file.mimetype
+  }
+
+  createImage(image)
+  
   res.redirect('/')
 })
 
