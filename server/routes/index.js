@@ -1,7 +1,7 @@
 const router = require('express').Router()
 
 router.get('/', async (req, res) => {
-  res.redirect('/images')
+  res.redirect('images')
 })
 
 module.exports = router
