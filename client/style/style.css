@@ -5,13 +5,8 @@
   --color-error: #f33030;
 }
 
-button,
 .button {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
   background: var(--color-main);
-  border: none;
 	border-radius: 25px;
 	box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
 	color: var(--color-secondary);
@@ -58,6 +53,14 @@ header a {
   text-decoration: none;
 }
 
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 75vh;
+}
+
 .button--add {
   background-color: var(--color-main);
   border-radius: 50%;
@@ -88,18 +91,78 @@ header a {
   stroke: none;
 }
 
-.feed {
-  align-items: center;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
-  margin: 0 auto;
-  min-height: 80vh;
-  justify-content: center;
+/************* Image slideshow ************************/
+.slideshow {
+  background-color: #131212;
+  height: 70vh;
+  position: relative;
   width: clamp(15em, 90%, 50em);
 }
 
-.feed img {
+.slideshow--content {
+  display: flex;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slideshow--content__figure {
+  flex-shrink: 0;
+  height: 100%;
+  position: relative;
+  scroll-snap-align: start;
   width: 100%;
+}
+
+.slideshow--content__figure__image {
+  height: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.slideshow--content__figure__description {
+  background: #13121285;
+  color: #ffbf00;
+  left: 0;
+  padding: .5em 1em;
+  position: absolute;
+  top: 0;
+}
+
+.slideshow button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--color-secondary);
+  cursor: pointer;
+  display: none;
+  font-size: 3em;
+  padding: .25em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background .2s ease-in-out;
+}
+
+.slideshow button.js {
+  display: block;
+}
+
+.slideshow button:hover {
+  background: #13121280;
+}
+
+.slideshow #prev {
+  left: 0;
+}
+
+.slideshow #next {
+  right: 0;
 }
 
 /************* Upload Images Form *****************/
@@ -193,4 +256,13 @@ header a {
 #drop-zone label:focus-within {
 	outline: 1px solid #000;
 	outline: -webkit-focus-ring-color auto 2px;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+  to {
+    opacity: 1
+  }
 }
