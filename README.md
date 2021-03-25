@@ -8,4 +8,5 @@
 - <img src="https://img.favpng.com/23/24/13/safari-computer-icons-ios-7-web-browser-png-favpng-XXQSh4qcvFmqv2vV8tjAnf5b6.jpg" width="15" /> Safari IOS & Safari Mac OSX
 
 ### Browser API's
-- [FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader): Voor het handlen van de image preview, bij de drag & drop feature voor uploaden.
+- [Drag & Drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API): Voor drag & drop functionaliteiten bij het uploaden van images.
+- [FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader): Voor het handlen van de image preview, bij de drag & drop feature.
