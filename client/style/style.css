@@ -270,6 +270,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   min-width: 20em;
+  position: relative;
   width: 80%;
 }
 
@@ -326,4 +327,56 @@ main {
   background: var(--color-main);
   height: 100%;
   width: 100%;
+}
+
+.edit button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: none;
+}
+
+.edit--button__save {
+  border-radius: 1.5em;
+  background: var(--color-main);
+  color: var(--color-secondary);
+  display: block;
+  padding: 1em;
+  margin-left: auto;
+}
+
+.edit--button__remove {
+  align-items: center;
+  background: #13121290;
+  border-radius: 50%;
+  display: flex;
+  height: 2.5em;
+  left: clamp(22em, 47.5%, 100vw);
+  justify-content: center;
+  position: absolute;
+  top: 2em;
+  transition: 
+    background .2s ease-in-out,
+    transform .2s ease-in-out;
+  width: 2.5em;
+}
+
+.edit--button__remove:hover {
+  background: #131212;
+  transform: scale(1.15);
+}
+
+.edit--button__remove svg {
+  fill: none;
+  height: 1.5em;
+  stroke: var(--color-secondary);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  width: 1.5em;
+}
+
+.edit--button__remove svg path:first-child {
+  fill: none;
+  stroke: none;
 }

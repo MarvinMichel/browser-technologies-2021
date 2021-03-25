@@ -17,7 +17,7 @@ router.post('/', upload.single('image'), (req, res) => {
 
   createImage(image)
   
-  res.redirect('/')
+  res.redirect(301, '/')
 })
 
 module.exports = router

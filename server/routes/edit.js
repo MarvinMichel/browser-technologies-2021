@@ -22,4 +22,9 @@ router.post('/:id', async (req, res) => {
   res.redirect('/')
 })
 
+router.post('/:id/remove', async (req, res) => {
+  await Images.findByIdAndDelete(req.params.id)
+  res.redirect('/')
+})
+
 module.exports = router
