@@ -248,16 +248,24 @@ main {
 
 .file-input label {
   align-items: center;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  position: relative;
+}
+
+.file-input label,
+.upload-form button {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background: var(--color-main);
+  border: none;
   border-radius: 25px;
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
   color: var(--color-secondary);
   cursor: pointer;
-  display: flex;
-  font-weight: bold;
-  justify-content: center;
   padding: .5em 1em;
-  position: relative;
   transition: transform .2s ease-out;
 }
 
@@ -268,8 +276,10 @@ main {
   position: absolute;
 }
 
-input:hover + label,
-input:focus + label {
+.upload-form input:hover + label,
+.upload-form input:focus + label,
+.upload-form button:hover,
+.upload-form button:focus {
   transform: scale(1.02);
 }
 
