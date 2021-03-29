@@ -101,7 +101,7 @@ main {
 .slideshow--content {
   display: flex;
   height: 100%;
-  overflow-x: auto;
+  overflow: auto hidden;
   scroll-snap-type: x mandatory;
   -webkit-scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
@@ -238,31 +238,44 @@ main {
   width: 100%;
 }
 
-#drop-zone input[type="file"] {
-	opacity: 0;
-	position: absolute;
+.file {
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  width: 0;
 }
 
-#drop-zone input[type="file"],
-#drop-zone input[type="file"]::-webkit-file-upload-button {
+.file-input label {
+  align-items: center;
+  background: var(--color-main);
+  border-radius: 25px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+  color: var(--color-secondary);
   cursor: pointer;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
+  padding: .5em 1em;
+  position: relative;
+  transition: transform .2s ease-out;
 }
 
-#drop-zone input[type="file"]:valid ~ * {
-  color: transparent;
+#file-name {
+  bottom: -8em;
+  color: grey;
+  font-size: 0.75rem;
+  position: absolute;
 }
 
-#drop-zone label {
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	position: relative;
-	margin-top: 0.25em;
+input:hover + label,
+input:focus + label {
+  transform: scale(1.02);
 }
 
-#drop-zone label:focus-within {
-	outline: 1px solid #000;
-	outline: -webkit-focus-ring-color auto 2px;
+/* Adding an outline to the label on focus */
+input:focus + label {
+  outline: 1px solid #000;
+  outline: -webkit-focus-ring-color auto 2px;
 }
 
 /************* Edit Images Form *******************/

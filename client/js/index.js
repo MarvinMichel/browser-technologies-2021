@@ -9,8 +9,9 @@ const dropSupported = ("ondrop" in document.documentElement)
 const fileReaderSupported = ("FileReader" in window)
 const scrollIntoViewSupported = ("scrollIntoView" in document.documentElement)
 
-if (dropZone && dropSupported) {
-  const selectFileButton = dropZone.querySelector('input[type=file]')
+if (dropZone) {
+  const fileInput = document.getElementById("file")
+  const fileNameContainer = document.getElementById("file-name")
 
   dropZone.addEventListener("dragover", (e) => {
     e.preventDefault()
@@ -22,29 +23,33 @@ if (dropZone && dropSupported) {
     e.target.classList.remove("active")
   })
 
-  dropZone.addEventListener("drop", (e) => {
-    e.preventDefault()
-    const images = e.dataTransfer.files
-    handleDrop(images)
-    e.target.classList.remove("active")
-  })
+  if (dropSupported) {
+    dropZone.addEventListener("drop", (e) => {
+      e.preventDefault()
+      const images = e.dataTransfer.files
+      handleDrop(images)
+      e.target.classList.remove("active")
+    })
+  }
 
-  selectFileButton.addEventListener("change", (e) => {
+  fileInput.addEventListener("change", (e) => {
     e.preventDefault()
     const images = e.target.files
+    const [{ name: fileName }] = images
+    fileNameContainer.textContent = fileName
     handleDrop(images)
   })
   
   function handleDrop(images) {
-    selectFileButton.files = images
+    fileInput.files = images
     images = [...images]
-    if (fileReaderSupported) {
-      images.forEach(image => {
+    images.forEach(image => {
+      if (fileReaderSupported) {
         previewImage(image)
-      })
-    }
+      }
+    })
   }
-    
+
   function previewImage(image) {
     const reader = new FileReader()
     reader.readAsDataURL(image)

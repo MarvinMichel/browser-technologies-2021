@@ -19,10 +19,13 @@
     <fieldset id="drop-zone">
       Drag &amp; drop <br />
       <span>or</span>
-      <label class="button">
-        <input type="file" name="image" id="image">
-        Select file
-      </label>
+      <div class="file-input">
+        <input type="file" id="file" class="file">
+        <label for="file">
+          Select file
+          <p id="file-name"></p>
+        </label>
+      </div>
     </fieldset>
     <button type="submit">Upload</button>
   </form>
