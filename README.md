@@ -129,6 +129,7 @@ if (slideShow && scrollIntoViewSupported && !isTouchDevice) {
 <img width="300" alt="Albummy IOS home screen" src="https://user-images.githubusercontent.com/25977763/113277415-f96e0a00-92e0-11eb-9dfc-36cf722fe46c.PNG" />     <img width="300" alt="Albummy IOS edit screen" src="https://user-images.githubusercontent.com/25977763/113277435-fecb5480-92e0-11eb-89a1-54f14ccb0507.PNG" />
 
 #### Google Chrome Android
+<img width="300" src="https://user-images.githubusercontent.com/25977763/113288228-f7ab4300-92ee-11eb-8897-e236594674ef.jpg" alt="Firefox Android preview" /> <img width="300" src="https://user-images.githubusercontent.com/25977763/113288236-f9750680-92ee-11eb-9419-d86a047dbe27.jpg" alt="Firefox Android home screen" />
 
 #### Safari Mac OSX
 <img width="1552" alt="Albummy home screen on Safari" src="https://user-images.githubusercontent.com/25977763/113274503-10f7c380-92de-11eb-9c32-994b1cd0e1c7.png">
